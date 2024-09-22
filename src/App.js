@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
-import {Header, List, MainBlock} from "./styles";
+import {Arrow, Header, ImagePlane, LastDiv, List, MainBlock} from "./styles";
 import {Popup} from "./popup/Popup";
 import Content from "./popup/Content";
 import {Contents} from "./Contents";
+import plane from './images/StepaPlane.png';
+import arrow from './images/ArrowDown.svg'
 
 export const App = () => {
     const [state, setState] = useState({
         isOpen: false,
-        content: ''
+        content: '',
+        prelast: false
     });
 
     const closePopup = () => {
@@ -26,11 +29,11 @@ export const App = () => {
             <Popup isOpen={state.isOpen} closeModal={closePopup}>
                 {state.content}
             </Popup>
-            <List>
+            <List $isOverflow={!!state.prelast}>
                 <h1>
                     Список:
                 </h1>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -39,7 +42,7 @@ export const App = () => {
                 }))}>
                     Первый способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -48,7 +51,7 @@ export const App = () => {
                 }))}>
                     Способ номер два
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -57,7 +60,7 @@ export const App = () => {
                 }))}>
                     Способ номер три
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -66,7 +69,7 @@ export const App = () => {
                 }))}>
                     Способ номер четыре
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -75,7 +78,7 @@ export const App = () => {
                 }))}>
                     Пятый способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -84,7 +87,7 @@ export const App = () => {
                 }))}>
                     Еще один способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -93,16 +96,16 @@ export const App = () => {
                 }))}>
                     Красивый способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
                         {...Contents.horse}
                     />
                 }))}>
-                   Продуманный способ
+                    Продуманный способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -111,7 +114,7 @@ export const App = () => {
                 }))}>
                     Божественный способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -120,7 +123,7 @@ export const App = () => {
                 }))}>
                     Болезненный способ
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -129,7 +132,7 @@ export const App = () => {
                 }))}>
                     Способ двадцать три
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
@@ -138,15 +141,31 @@ export const App = () => {
                 }))}>
                     Способ двенадцать
                 </div>
-                <div onClick={() =>setState(prevState => ({
+                <div onClick={() => setState(prevState => ({
                     ...prevState,
                     isOpen: true,
                     content: <Content
                         {...Contents.failed}
-                    />
+                    />,
+                    prelast: true
                 }))}>
-                    Ну и последний совет
+                    Ну и предпоследний совет
                 </div>
+                {
+                    state.prelast &&
+                    <LastDiv onClick={() => setState(prevState => ({
+                        ...prevState,
+                        isOpen: true,
+                        content: <Content
+                            {...Contents.final}
+                        />
+                    }))}>
+                        Финальный совет
+                    </LastDiv>
+                }
+                <ImagePlane src={plane} alt="plane" id="plane" title="Делай бизнес, детка!"/>
+                {state.prelast &&
+                    <Arrow src={arrow} alt="Стрелка вниз" className="arrowDown"/>}
             </List>
         </MainBlock>
     );

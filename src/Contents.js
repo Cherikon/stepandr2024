@@ -2,6 +2,7 @@ import football from './images/football.gif';
 import Stepa from './images/Stepa.png';
 import changePol from './images/changePol.png';
 import menLove from './images/menLove.png';
+import ozon from './images/ozon.png';
 import steal from './images/steal.gif';
 import polit from './images/polit.gif';
 import kulak from './images/kulak.gif';
@@ -86,5 +87,12 @@ export const Contents = {
         text: 'Не отчаивайся',
         img: kulak,
         ps: 'З.Ы. Шутка, все будет хорошо!'
+    },
+    final: {
+        header: 'На случай если ничего не поможет',
+        text: 'Ну а если вдруг совсем ничего не поможет, то лови от нас подарок - билет на самолет!',
+        img: ozon,
+        ps: 'P.S. Тебе самому надо забрать из озона',
+        map: true
     },
 }

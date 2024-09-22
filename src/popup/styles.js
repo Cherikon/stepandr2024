@@ -95,6 +95,26 @@ export const Image = styled.img`
   margin-top: 32px;
 `;
 
+export const YMap = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  & > iframe {
+    position: relative;
+    width: 60vw;
+    height: 20vh;
+    @media (min-width: 768px) {
+      width: 960px;
+      height: 400px;
+    }
+
+    @media (min-width: 2560px) {
+      width: 1500px;
+      height: 700px;
+    }
+  }
+`;
+
 export const ContentBlock = styled.div`
   display: flex;
   flex-direction: column;

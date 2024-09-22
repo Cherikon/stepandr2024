@@ -25,6 +25,7 @@ export const Header = styled.header`
 export const List = styled.section`
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
   padding-bottom: 150px;
   h1 {
     font-size: 35px;
@@ -36,6 +37,7 @@ export const List = styled.section`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  
   div {
     font-size: 20px;
     @media (min-width: 1024px) {
@@ -48,4 +50,39 @@ export const List = styled.section`
       -webkit-text-fill-color: transparent;
     }
   }
+  overflow: ${props => props.$isOverflow ? 'visible' : 'hidden'};
+`;
+
+export const ImagePlane = styled.img`
+  @media (max-width: 1023px) {
+    display: none;
+  }
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 183vh;
+`;
+
+export const LastDiv = styled.div`
+  @media (min-width: 1024px) {
+    margin-top: 1294px;
+  }
+`;
+
+export const Arrow = styled.img`
+  @media (max-width: 1023px) {
+    display: none;
+  }
+  position: absolute;
+  bottom: 1380px;
+  height: 40px;
+  animation: animate 1200ms infinite forwards;
+
+  @keyframes animate {
+    0%, 100% {
+      bottom: 1380px;
+    }
+    50% {
+      bottom: 1410px;
+    }
 `;
