@@ -60,7 +60,7 @@ export const ImagePlane = styled.img`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 183vh;
+  top: 168vh;
 `;
 
 export const LastDiv = styled.div`
