@@ -136,6 +136,15 @@ export const App = () => {
                     ...prevState,
                     isOpen: true,
                     content: <Content
+                        {...Contents.small}
+                    />
+                }))}>
+                    Сельский способ
+                </div>
+                <div onClick={() => setState(prevState => ({
+                    ...prevState,
+                    isOpen: true,
+                    content: <Content
                         {...Contents.old2}
                     />
                 }))}>
