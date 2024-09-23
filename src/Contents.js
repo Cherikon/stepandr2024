@@ -2,7 +2,7 @@ import football from './images/football.gif';
 import Stepa from './images/Stepa.png';
 import changePol from './images/changePol.png';
 import menLove from './images/menLove.png';
-import ozon from './images/ozon.png';
+import ozon from './images/ozon.jpg';
 import steal from './images/steal.gif';
 import polit from './images/polit.gif';
 import kulak from './images/kulak.gif';
