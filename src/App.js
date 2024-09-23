@@ -172,7 +172,7 @@ export const App = () => {
                         Финальный совет
                     </LastDiv>
                 }
-                <ImagePlane src={plane} alt="plane" id="plane" title="Делай бизнес, детка!"/>
+                <ImagePlane src={plane} alt="plane" id="plane" title="Делай бизнес, детка!" $isLastOpen={!!state.prelast}/>
                 {state.prelast &&
                     <Arrow src={arrow} alt="Стрелка вниз" className="arrowDown"/>}
             </List>

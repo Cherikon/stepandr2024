@@ -59,8 +59,8 @@ export const ImagePlane = styled.img`
   }
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
-  top: 175vh;
+  transform: ${props => props.$isLastOpen ? 'translate(-50%, -14.7%)' : 'translate(-50%, 90%)'};
+  bottom: 0;
 `;
 
 export const LastDiv = styled.div`
